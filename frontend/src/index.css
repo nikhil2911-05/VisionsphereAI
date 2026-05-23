@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-color: #f8fafc;
+    --text-color: #0f172a;
+    --panel-bg: #ffffff;
+    --border-color: #e2e8f0;
+  }
+  
+  .dark {
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --panel-bg: #1e293b;
+    --border-color: #334155;
+  }
+
+  body {
+    @apply bg-[var(--bg-color)] text-[var(--text-color)] transition-colors duration-300 antialiased font-sans;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-[var(--border-color)] shadow-xl;
+  }
+}
